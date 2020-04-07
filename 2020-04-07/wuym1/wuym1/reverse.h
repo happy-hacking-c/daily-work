@@ -11,4 +11,7 @@
 
 #include <stdio.h>
 
+void reverse(char line[]);
+int mygetline(char s[], int lim);
+
 #endif /* reverse_h */

@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void ctof(void);
+
 #endif /* ctof_h */

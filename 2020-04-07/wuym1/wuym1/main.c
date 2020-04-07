@@ -8,6 +8,8 @@
 
 #include <stdio.h>
 
+#include "reverse.h"
+
 #define MAXLINE 1000
 
 int main(int argc, const char * argv[]) {

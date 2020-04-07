@@ -16,15 +16,15 @@ void reverse(char line[]) {
         max++;
     }
     
-    for (int i = 0; i <= max / 2; i++) {
+    for (int i = 0; i < max / 2; i++) {
         tmp = line[i];
-        line[i] = line[max - i - 1];
-        line[max - i - 1] = tmp;
+        line[i] = line[max - i - 2];
+        line[max - i - 2] = tmp;
     }
 }
 
 int mygetline(char s[], int lim) {
-    int c, i;
+    int c = 0, i;
     
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; i++) {
         s[i] = c;

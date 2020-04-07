@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void str_replace(void);
+
 #endif /* str_replace_h */
