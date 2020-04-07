@@ -8,8 +8,18 @@
 
 #include <stdio.h>
 
+#define MAXLINE 1000
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    
+    int len;
+    char line[MAXLINE];
+    
+    while ((len = mygetline(line, MAXLINE)) > 0) {
+        reverse(line);
+        printf("%s\n", line);
+    }
+    
     return 0;
 }
