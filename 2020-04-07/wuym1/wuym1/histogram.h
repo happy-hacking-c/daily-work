@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void histogram(void);
+
 #endif /* histogram_h */
