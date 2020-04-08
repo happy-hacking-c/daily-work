@@ -18,7 +18,7 @@ int any(char s[], char t[]);
 int any(char s[], char t[])
 {
     int pos = NONE;
-    int j;
+    int j;//可以猜下为什么要把内部循环的自增下标变量声明在这里？
     for(int i = 0; s[i] != '\0'; i++ ) {
         for(j = 0; t[j] != '\0'; j++ ) {
             if(s[i] != t[j]) {
@@ -34,7 +34,6 @@ int any(char s[], char t[])
         }
 
         //如果已经找到(被循环字符串循环完毕)，终止外层大循环，不再继续匹配
-
         if(t[j] == '\0') break;
     }
 
