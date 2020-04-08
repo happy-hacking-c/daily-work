@@ -51,9 +51,9 @@ int main()
 
     //输出信息
     if((pos = any(string_1, string_2)) != NONE) {
-        printf("%s In %s 's position is : %d" ,  string_2, string_1, pos);
+        printf("[%s] In [%s] 's position is : %d" ,  string_2, string_1, pos);
     }else{
-        printf("%s In %s dosn't exit!" , string_2, string_1);
+        printf("[%s] In [%s] dosn't exit!" , string_2, string_1);
 
     }
     
