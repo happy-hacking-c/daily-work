@@ -7,9 +7,12 @@
 //
 
 #include <stdio.h>
+#include "type_range.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    
+    type_range();
+    
     return 0;
 }
