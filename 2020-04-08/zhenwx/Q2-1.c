@@ -3,7 +3,7 @@
 
 int main()
 {
-    printf("\n标准头文件输出\n");
+    printf("\nHeader Out\n");
     printf("Type Min~Max\n");
     printf("signedInt %d~%d\n", INT_MIN, INT_MAX);
     printf("unsignedInt %d~%u\n", 0, UINT_MAX);
@@ -15,7 +15,7 @@ int main()
     printf("unsignedChar %d~%d\n", 0, UCHAR_MAX);
 
 
-    printf("\n直接计算输出\n");
+    printf("\nExec Out\n");
     printf("Type Min~Max\n");
     int sin, sim;
     while (1)
