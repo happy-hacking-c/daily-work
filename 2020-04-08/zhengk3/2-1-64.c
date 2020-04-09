@@ -27,7 +27,7 @@ int main()
     printf("unSigned short: %d ~ %u\n",0 , UCHAR_MAX);
     printf("signed int: %d ~ %d\n",INT_MIN, INT_MAX);
     printf("unSigned int: %d ~ %u\n",0 , UCHAR_MAX);
-    printf("signed long: %lld ~ %lld\n",LONG_LONG_MIN , LONG_LONG_MAX);
+    printf("signed long: %lld ~ %lld\n",LLONG_MIN , LLONG_MAX); //windows平台下可以使用LONG_LONG_MIN和LONG_LONG_MAX，且只有windows平台下定义了这个常量
     printf("unSigned long: %d ~ %llu\n",0 , ULLONG_MAX);
     printf("------------------------------\n");
 
