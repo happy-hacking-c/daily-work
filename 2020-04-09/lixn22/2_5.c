@@ -16,10 +16,11 @@ int main() {
 
 int any(char s1[], char s2[]) {
     int i, j, pos;
-    i = j = 0;
+    i = 0;
     pos = -1;
     while (s2[i] != '\0')
     {
+        j = 0;
         while (s1[j] != '\0')
         {
             if (s2[i] == s1[j])
