@@ -12,3 +12,16 @@ int main() {
 unsigned invert(unsigned x, unsigned p, unsigned n) {
   return x ^ (~(~0 << n) << (p + 1 - n));
 }
+
+
+int bitcount(unsigned x)
+{
+    int count = 0;
+    
+    while (x > 0) {
+        x &= (x - 1);
+        count++;
+    }
+
+    return count;
+}
