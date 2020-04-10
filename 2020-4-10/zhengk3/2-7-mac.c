@@ -5,11 +5,8 @@
  * 2020年4月10日12:23:28
  * */
 
-#include <stdio.h>
 #include <math.h>
 #include "inttob.h"
-
-
 
 //函数声明
 unsigned invert(unsigned x, int p, int n);
@@ -87,7 +84,8 @@ int main()
 
     //调用处理函数
     unsigned result;
-    if(result = invert(x , 5, 3)) {
+    result = invert(x , 5, 3);
+    if(result) {
         //打印转换后的二进制数排列
         printf("转换后，二进制序列如下：\n");
         int_to_b(result);

@@ -1,11 +1,11 @@
 #include<stdio.h>
-#include<math.h>
+#include<stdlib.h>
 #include<limits.h>
 
 void int_to_b(int input){
 	int binary[32] = {0};
 	int i = 0;
-	int n = fabs(input);
+	int n = abs(input);
 
 	while(n){
 	
