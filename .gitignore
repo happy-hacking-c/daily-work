@@ -16,4 +16,6 @@
 !*.H
 !*.c
 cmake-build-debug
+CMakeLists.txt
+main.c
 !*.txt
