@@ -16,3 +16,4 @@
 !*.H
 !*.c
 cmake-build-debug
+!*.txt
