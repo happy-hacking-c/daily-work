@@ -8,8 +8,32 @@
 
 #include <stdio.h>
 
+int binsearch(int x, int v[], int n) {
+    int low, high, mid;
+    
+    low = 0;
+    high = n - 1;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (x < v[mid]) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    
+    if (n >= 1 && v[mid] == x) {
+        return mid;
+    } else {
+        return -1;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    
+    int v[10] = {0, 2, 5, 6, 8, 10, 15, 20, 22, 30};
+    printf("%d\n", binsearch(15, v, 10));
+    
     return 0;
 }
