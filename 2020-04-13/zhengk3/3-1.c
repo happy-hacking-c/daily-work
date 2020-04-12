@@ -78,6 +78,7 @@ int main()
     printf("binsearch2 runing time: %lu（%f s）\n", finish-start, (double)((finish-start)/CLK_TCK));
 
     //CLK_TCK被认为已过时，建议使用 CLOCKS_PER_SEC
+    //更多细节https://ask.zkbhj.com/?/question/355
     
     return 0;
 }
