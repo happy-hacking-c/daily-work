@@ -9,20 +9,24 @@
 #include <stdio.h>
 
 int binsearch(int x, int v[], int n) {
-    int low, high, mid;
+    if (n < 1) {
+        return -1;
+    }
     
+    int low, high, mid;
     low = 0;
     high = n - 1;
-    while (low <= high) {
-        mid = (low + high) / 2;
+    mid = (low + high) / 2;
+    while (v[mid] != x && low <= high) {
         if (x < v[mid]) {
             high = mid - 1;
         } else {
             low = mid + 1;
         }
+        mid = (low + high) / 2;
     }
     
-    if (n >= 1 && v[mid] == x) {
+    if (v[mid] == x) {
         return mid;
     } else {
         return -1;
