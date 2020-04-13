@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int invert(int x, int p, int n)
+unsigned invert(int x, int p, int n)
 {
     return x ^ (~(~0 << n) << (p - n + 1));
 }
@@ -21,7 +21,7 @@ int main()
     p = 2;
     n = 6;
     
-    printf("invert(%d, %d, %d) = %d\n", x, p, n, invert(x, p, n));
+    printf("invert(%d, %d, %d) = %ud\n", x, p, n, invert(x, p, n));
     printf("bitcount(%d) = %d\n", x, bitcount(x));
     return 0;
 }
