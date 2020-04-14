@@ -64,9 +64,16 @@ int main()
     int n = 2345;
     int b = 8;
 
+    if( b < 1) {
+        goto error;
+    }
+
     itoa(n , r, b);
 
     //打印
     printf("%s \n",p);
+
+    error:
+       printf("error! \n");
 
 }
