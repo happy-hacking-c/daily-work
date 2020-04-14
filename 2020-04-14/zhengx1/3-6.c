@@ -35,13 +35,13 @@ void itoa(int n ,char s[],int b){
 		s[i++] = '-';
 		/* code */
 	}
-	if(i<b){
-		for (; i < b; ++i)
-		{
-			s[i] = 32;
-			/* code */
-		}
+	
+	for (; i < b; ++i)
+	{
+		s[i] = 32;
+		/* code */
 	}
+	
 	s[i] = '\0';
 
 	// printf("%s\n", s);
