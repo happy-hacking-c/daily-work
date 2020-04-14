@@ -8,7 +8,7 @@
 void reverse(char s[]) {
     int i, j, len = strlen(s);
     char tmp;
-    for (i = 0, j = len -1; i < j; i++, j--) {
+    for (i = 0, j = len - 1; i < j; i++, j--) {
         tmp = s[i];
         s[i] = s[j];
         s[j] = tmp;
@@ -40,8 +40,8 @@ void itoa(int n, char s[], long l){
 
 int main() {
     int n = -256;
-    char s[6];
-    itoa(n, s, 6);
+    char s[100];
+    itoa(n, s, 10);
     printf("%s\n", s);
     return 0;
 }
