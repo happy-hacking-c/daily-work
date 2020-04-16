@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 #define swap(t, x, y) t temp; temp = x; x = y; y = temp;
 
