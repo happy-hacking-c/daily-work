@@ -9,7 +9,7 @@
 
 char *mystrncpy(char *s, int n, char *t);
 
-//将字符串t中的前n个字符复制到s后面
+//将字符串t中的前n个字符复制到s中
 char *mystrncpy(char *s, int n, char *t)
 {
     char *spoint = s;
