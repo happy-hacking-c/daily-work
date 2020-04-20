@@ -30,7 +30,7 @@ char* astrncat(char *s, char *t, int n){
     while (*s != '\0'){
         s++;
     }
-    while ((*s++  = *t++) != '\0' && --n>0);
+    while ((*s++  = *t++) != '\0' && --n>=0);
     return s;
 }
 
