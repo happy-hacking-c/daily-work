@@ -8,10 +8,8 @@ void strncpy(char *s, char *t, int n) {
 }
 
 void strncat(char *s, char *t, int n) {
-    char *temp = s + n;
-    while (*temp++ = *t++) {
-        /* code */
-    }
+    char *temp = t + n;
+    while (*s++ = *temp++) {}
 }
 
 char strncmp(char *s, char *t, int n) {
@@ -23,7 +21,7 @@ char strncmp(char *s, char *t, int n) {
 }
 
 int main() {
-    char *s = "11111";
+    char *s;
     char *t = "12345";
     int n = 3;
 
