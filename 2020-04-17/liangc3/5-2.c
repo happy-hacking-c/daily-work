@@ -17,7 +17,7 @@ int main() {
     for (i = 0; getfloat(&a[i]) != EOF; i++)
         ;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 3; i++) {
         printf("%f\n", a[i]);
     }
 }
