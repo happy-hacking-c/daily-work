@@ -72,6 +72,16 @@ void qsort(char *v[], int left, int right)
     qsort(v, last + 1, right);
 }
 
+void swap(char *v[], int i, int j);
+
+void swap(char *v[], int i, int j)
+{
+    char *temp;
+    temp = v[i];
+    v[i] = v[j];
+    v[j] = temp;
+}
+
 int agetline(char *s, int lim)
 {
     int c, i;
