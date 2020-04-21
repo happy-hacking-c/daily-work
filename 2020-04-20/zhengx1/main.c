@@ -2,44 +2,44 @@
 //
 char *mystrncpy(char *s,char *ct,int n);
 char *mystrncat(char *s,char *ct,int n);
-char *mystrnmp(char *s,char *ct,int n);
+// char *mystrnmp(char *s,char *ct,int n);
 
 
 int main() {
-    char s[100] = "";
+    char s[100] = "aaa";
     char b[100] = "good1";
 
-//    mystrncat(s,b,5);
-    mystrncpy(s,b,4);
+    mystrncat(s,b,5);
+    // mystrncpy(s,b,4);
     printf("%s",s);
     return 0;
 }
 
 
 char *mystrncpy(char *s, char *t, int n){
-    while ((*s++ = *t++)  && --n >0 )
+    while ((*s++ = *t++) != '\0' && --n >0 )
         ;
     while (n>0){
         *s ++ = '\0';
         n--;
     }
-    return *s;
+    return s;
 
 }
 
 
 char *mystrncat(char *s, char *t, int n){
-    while (*t != '\0'){
-        t++;
+    while (*s != '\0'){
+        s++;
     }
-    while ((*t++  = *s++) != '\0' && n>0){
+    while ((*s++  = *t++) != '\0' && n>0){
         n--;
     }
-    return t;
+    return s;
 }
 
 
-char *mystrncmp(char *s, char *t, int n){
+int mystrncmp(char *s, char *t, int n){
     for(; *s == *t; ++s, ++t){
         if(*s == '\0' || --n <= 0)
             return 0;
