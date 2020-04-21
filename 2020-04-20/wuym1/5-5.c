@@ -1,18 +1,19 @@
 #include "stdio.h"
 
-void strncpy(char *s, char *t, int n) {
-    int i = 0;
-    while (i < n && (*s++ = *t++)) {
-        i++;
-    }
-}
-
-void strncat(char *s, char *t, int n) {
+void mystrncpy(char *s, char *t, int n) {
     char *temp = t + n;
-    while (*s++ = *temp++) {}
+    while ((*s++ = *temp++)) ;
 }
 
-char strncmp(char *s, char *t, int n) {
+void mystrncat(char *s, char *t, int n) {
+    while (*s != '\0') {
+        s++;
+    }
+    while ((*s++ = *t++) != '\0' && --n >= 0);
+    return s;
+}
+
+char mystrncmp(char *s, char *t, int n) {
     for(; *s == *t; ++s, ++t) {
         if(*s == '\0' || --n <= 0)
             return 0;
@@ -21,11 +22,11 @@ char strncmp(char *s, char *t, int n) {
 }
 
 int main() {
-    char *s;
+    char *s = "abcde";
     char *t = "12345";
     int n = 3;
 
-    strncat(s, t, n);
+    mystrncat(s, t, n);
     printf("%s", s);
 
     return 0;
