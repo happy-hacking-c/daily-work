@@ -12,20 +12,14 @@ void qsort(char *lineptr[], int left, int right);
 
 int gline(char line[], int maxline);
 /* readlines: read input lines */
-int readlines(char *lineptr[], int maxlines, char *p[])
+int readlines(char *lineptr[], int maxlines, char p[MAXLINES][MAXLEN])
 {
     int len, nlines;
-    char line[MAXLEN];
     nlines = 0;
-    while ((len = gline(line, MAXLEN)) > 0) {
-        if (nlines >= maxlines) {
-            return maxlines;
-        } else {
-            line[len - 1] = '\0'; /* delete newline */
-            p[nlines] = line;
-            //strcpy(p[nlines], line);
-            lineptr[nlines++] = p[nlines];
-        }
+    while (nlines < maxlines && (len = gline(p[nlines], MAXLEN)) > 0) {
+        p[nlines][len - 1] = '\0';
+        lineptr[nlines] = p[nlines];
+        nlines++;
     }
     return nlines;
 }
@@ -57,7 +51,7 @@ void writelines(char *lineptr[], int nlines)
 int main()
 {
     int nlines; /* number of input lines read */
-    char *p[MAXLINES];
+    char p[MAXLINES][MAXLEN];
     if ((nlines = readlines(lineptr, MAXLINES, p)) >= 0)
     {
         qsort(lineptr, 0, nlines - 1);
