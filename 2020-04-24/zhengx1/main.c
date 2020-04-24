@@ -1,11 +1,12 @@
 #include <stdio.h>
+int row = 2;
+int col = 13;
 
 static char daytab[2][13] = {
         {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
         {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 };
 
-extern int var[];
 
 int day_of_year(int year,int month, int day)
 {
@@ -13,11 +14,11 @@ int day_of_year(int year,int month, int day)
     leap = year %4 == 0 && year %100 !=0 || year %400 ==0;
     if(month < 1 || month > 12)
         return -1;
-    if(day < 1 || day > daytab[leap][month])
+    if(day < 1 || day > *(*daytab+leap*col+month))
         return -1;
 
     for (int j = 0; j < month; ++j) {
-        day += daytab[leap][j];
+        day += *(*daytab+leap*col+j);
     }
     return day;
 }
@@ -37,8 +38,8 @@ void month_day(int year,int yearday, int *pmonth, int *pday)
         return;
     }
 
-    for (j = 0; yearday>daytab[leap][j]; ++j) {
-        yearday -= daytab[leap][j];
+    for (j = 0; yearday>*(*daytab+leap*col+j); ++j) {
+        yearday -= *(*daytab+leap*col+j);
 
     }
     *pmonth = j;
@@ -46,14 +47,19 @@ void month_day(int year,int yearday, int *pmonth, int *pday)
 }
 
 int main() {
-    var[3] = {1,2,3};
-//    int day = day_of_year(2020,4,22);
-//    printf("是第%d天!!\n",day);
-//    int pmonth,pday;
-//    month_day(2001,365,&pmonth,&pday);
-//    printf("是%d月%d号",pmonth,pday);
-
+    int year = 2020;
+    int month = 4;
+    int day = 24;
+    int dayth = 115;
+    int pm,pd;
+    month_day(year,dayth,&pm,&pd);
+    printf("%d-%d-%d是第%d天\n",year,month,day,day_of_year(year,month,day));
+    printf("%d年的第%d天是%d-%d\n",year,dayth,pm, pd);
     return 0;
 }
 
-int var[3];
+
+
+
+
+
