@@ -1,9 +1,40 @@
-#include "stdio.h"
+#include <stdio.h>
 
-// int mygetline(char *s, int max);
+#define MAXLINE 100
 
-int main(int argc, char *argv[]) {
-    int n = *argv[1];
-    printf("%d\n", n);
+int mygetline(char s[], int lim) {
+    int c, i;
+    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+        s[i] = c;
+    if (c == '\n') {
+        ++i;
+    }
+    s[i] = '\0';
+    return i;
+}
+
+int main(int argc, char const *argv[]) {
+    int n;
+    sscanf(argv[1], "%d", &n);
+
+    if (argc >= 2) {
+        sscanf(argv[1], "%d", &n);
+    }
+
+    if (n < 1) {
+        n = 10;
+    }
+
+    printf("n = %d\n", n);
+
+    char line[MAXLINE];
+    int i = 1;
+    while (mygetline(line, MAXLINE) > 0) {
+        if (i >= n) {
+            printf("line%d\t%s\n", i, line);
+        }
+        i++;
+    }
+
     return 0;
 }
