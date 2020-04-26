@@ -72,7 +72,7 @@ static int mygetline(char *s, int len)
 {
     int i; // 字符数
 	int c; // 读取的字符
-	for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+	for (i = 0; i < len - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
 	{
 		s[i] = c;
 	}
