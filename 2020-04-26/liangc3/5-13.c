@@ -1,6 +1,6 @@
 //
 // Created by cotton on 2020/4/26.
-// eg:   ./a.out -n20
+// eg:   ./a.out -20
 //
 
 #include <stdio.h>
@@ -16,16 +16,8 @@ int main(int argc, char *argv[]) {
     char c;
     int row = 0;
     while(--argc > 0 && (*++argv)[0] == '-') {
-        while ((c = *++argv[0]) != '\0') {
-            switch (c) {
-                case 'n':
-                    while((c = *++argv[0]) != '\0') {
-                        if (c >= '0' && c <= '9') {
-                            row = row * 10 + c - '0';
-                        }
-                    }
-                    break;
-            }
+        while ((c = *++argv[0]) != '\0' && c >= '0' && c <= '9') {
+            row = row * 10 + c - '0';
         }
     }
     if (row == 0) {
