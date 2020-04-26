@@ -10,6 +10,7 @@ static char daytab[2][13] = {
 
 int day_of_year(int year,int month, int day)
 {
+
     int leap;
     leap = year %4 == 0 && year %100 !=0 || year %400 ==0;
     if(month < 1 || month > 12)
@@ -46,12 +47,20 @@ void month_day(int year,int yearday, int *pmonth, int *pday)
     *pday = yearday;
 }
 
-int main() {
+int main() {q
+
+    int a = 0;
+    int b = 1;
+    int c = 1;
+    int d = a | b & c;
+    printf("%d",d);
+
     int year = 2020;
     int month = 4;
     int day = 24;
     int dayth = 115;
     int pm,pd;
+
     month_day(year,dayth,&pm,&pd);
     printf("%d-%d-%d是第%d天\n",year,month,day,day_of_year(year,month,day));
     printf("%d年的第%d天是%d-%d\n",year,dayth,pm, pd);
