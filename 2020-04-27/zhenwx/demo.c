@@ -35,17 +35,14 @@ int main(int argc, char *argv[]) {
                 case 'n':
                     numeric = 1;
                     argc--;
-                    printf("number \n");
                     break;
                 case 'b':
                     begin = atoi(*++argv);
                     argc--;
-                    printf("begin %d\n", begin);
                     break;
                 case 'l':
                     len = atoi(*++argv);
                     argc--;
-                    printf("len %d\n", len);
                     break;
                 default:
                     argc = 0;
@@ -53,6 +50,7 @@ int main(int argc, char *argv[]) {
             }
     }
 
+    printf("numeric = %d, begin = %d,len = %d\n", numeric, begin, len);
     if (numeric == 0 && len == 0) {
         printf("参数错误，strcmp必须指定len\n");
         return 1;
@@ -154,14 +152,14 @@ int mystrcmp(char *s, char *t) {
             if (*t != '\0') t++;
         }
     }
+    
     if (len > 0) {
         len = -1;
     }
+
     for (; *s == *t; s++, t++)
         if (*s == '\0') return 0;
-    if (len > 0) {
-        len--;
-    }
+    
     if (len == 0) {
         return 0;
     }
