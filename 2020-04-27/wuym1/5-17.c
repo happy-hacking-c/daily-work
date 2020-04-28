@@ -30,17 +30,14 @@ int main(int argc, char *argv[]) {
                 case 'n':
                     numeric = 1;
                     argc--;
-                    printf("number \n");
                     break;
                 case 'b':
                     begin = atoi(*++argv);
                     argc--;
-                    printf("begin %d\n", begin);
                     break;
                 case 'l':
                     len = atoi(*++argv);
                     argc--;
-                    printf("len %d\n", len);
                     break;
                 default:
                     argc = 0;
@@ -50,8 +47,7 @@ int main(int argc, char *argv[]) {
     }
 
     if ((nlines = readlines(lineptr, MAXLINES)) >= 0) {
-        mqsort((void **)lineptr, 0, nlines - 1,
-               (int (*)(void *, void *))(numeric ? numcmp : mystrcmp));
+        mqsort((void **)lineptr, 0, nlines - 1, (int (*)(void *, void *))(numeric ? numcmp : mystrcmp));
         writelines(lineptr, nlines);
         return 0;
     } else {
@@ -81,8 +77,7 @@ void mswap(void *v[], int i, int j) {
 }
 
 void writelines(char *lineptr[], int nlines) {
-    int i = 0;
-    while (nlines-- > 0) printf("#%d %s\n", i++, *lineptr++);
+    while (nlines-- > 0) printf("%s\n", *lineptr++);
 }
 
 int readlines(char *lineptr[], int maxlines) {
@@ -145,9 +140,6 @@ int mystrcmp(char *s, char *t) {
     }
     for (; *s == *t; s++, t++)
         if (*s == '\0') return 0;
-    if (len > 0) {
-        len--;
-    }
     if (len == 0) {
         return 0;
     }
