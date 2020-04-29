@@ -85,11 +85,9 @@ int gettoken(void) /* return next token */
         ungetch(c);
         return tokentype = NAME;
     }
-    else if(c == EOF) {
+    else
         return tokentype = c;
-    } else{
-        printf("Error: unknown character %c\n", c);
-    }
+    
         
 }
 
