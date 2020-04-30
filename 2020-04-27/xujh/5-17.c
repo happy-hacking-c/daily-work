@@ -1,6 +1,9 @@
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
+//
+// Created by junhai on 2020/4/28.
+//
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #include <stdlib.h>
 
 #define NUMBERIC 1
@@ -44,10 +47,10 @@ int main(int argc, char *argv[]){
         if((nlines = readlines(lineptr, LINES)) > 0){
             if(option & NUMBERIC)
                 myqsort((void *)lineptr, 0, nlines - 1,
-                      (int (*)(void *, void *))numcmp);
+                        (int (*)(void *, void *))numcmp);
             else
                 myqsort((void *)lineptr, 0, nlines - 1,
-                      (int (*)(void *, void *))charcmp);
+                        (int (*)(void *, void *))charcmp);
             writelines(lineptr, nlines);
         }else{
             printf("input too bit to sort\n");
@@ -153,6 +156,14 @@ int numcmp(char *s1,char *s2)
 
 }
 
+int charcmp(char *s,char *t)
+{
+    for( ; *s == *t;s++,t++)
+        if (*s == '\0')
+            return 0;
+    return *s - *t;
+}
+
 
 void swap(void *v[],int i, int j)
 {
@@ -185,53 +196,3 @@ void error(char *s){
     printf("%s",s);
 }
 
-
-
-/*charcmp: return < 0  if s<t, 0 if s==t,>0 if s>t */
-int charcmp(char *s, char *t)
-{
-    char a, b;
-    int i, j, endpos;
-    extern char option;
-    extern int pos1, pos2;
-    int fold = (option & FOLD) ? 1 : 0;
-    int dir = (option & DIR) ? 1 : 0;
-    i = j = pos1;
-    if(pos2 > 0)
-        endpos = pos2;
-    else if ((endpos = strlen(s)) > strlen(t))
-        endpos = strlen(t);
-    do{
-        if(dir){
-            while(i < endpos && !isalnum(s[i]) && s[i] != ' ' && s[i] != ' ')
-                i++;
-            while(j < endpos && !isalnum(t[j]) && t[j] != ' ' && t[j] != ' ')
-                j++;
-        }
-        if(i < endpos && j < endpos) {
-            a = fold ? tolower(s[i]) : s[i];
-            i++;
-            b = fold ? tolower(t[j]) : t[j];
-            j++;
-            if(a == b && a == ' ')
-                return 0;
-        }
-    }while(a == b && i < endpos && j < endpos);
-    return a - b;
-
-}
-
-/* substr: get a substring of s and put in str*/
-void substr(char *s, char *str)
-{
-    int i, j, len;
-    extern int pos1, pos2;
-    len = strlen(s);
-    if(pos2 > 0 && len > pos2)
-        len = pos2;
-    else if(pos2 > 0 && len < pos2)
-        error("substr: string too shortn");
-    for(j = 0, i = pos1;i < len; i++, j++)
-        str[j] = s[i];
-    str[j] = ' ';
-}
