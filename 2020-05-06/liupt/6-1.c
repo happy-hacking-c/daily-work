@@ -19,13 +19,13 @@ struct key
     "const", 0,
     "continue", 0,
     "default", 0,
+    "define", 0,
+    "include", 0,
     /* ... */
     "unsigned", 0,
     "void", 0,
     "volatile", 0,
-    "while", 0,
-    "define", 0,
-    "include", 0};
+    "while", 0};
 
 int getword(char *word, int lim);
 int binsearch(char *word, struct key tab[], int n);
