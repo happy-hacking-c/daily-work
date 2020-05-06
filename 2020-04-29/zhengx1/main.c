@@ -20,21 +20,31 @@ char out[1000];
 
 
 
+
 #define BUFSIZE  100
 
 char buf[BUFSIZE];          /* buffer for ungetch */
 int bufp = 0;               /* next free position in buf */
 
-int main() /* convert declaration to words */ {
 
-    while (gettoken() != EOF) { /* 1st token on line */
-        strcpy(datatype, token); /* is the datatype */
-        out[0] = '\0';
-        dcl(); /* parse rest of line */
-        if (tokentype != '\n')
-            printf("syntax error\n");
-        printf("%s: %s %s\n", name, out, datatype);
-    }
+
+int x(int z){
+    return z;
+}
+
+
+int main() /* convert declaration to words */ {
+    int (*a[1])(int);
+  int zzz = 1;
+
+    a[0] = x;
+    int c = 8;
+    int f =c;
+    printf("%d",f);
+    a[1] = x;
+    int y;
+    y = a[1](888);
+ printf("%d",y);
     return 0;
 
 }
