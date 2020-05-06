@@ -84,8 +84,6 @@ int mygetword(char *word, int lim) {
             }
         }
 
-        if (c != '\"' && c != '\n') ungetch(c);
-
         *w = '\0';
         return c;
     }
