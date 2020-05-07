@@ -51,10 +51,12 @@ int main(int argc, char *argv[])
     int n;
     char word[MAXWORD];
 
-    while (mygetword(word, MAXWORD) != EOF)
+    while (mygetword(word, MAXWORD) != EOF){
+        printf("zzz%s\n", word);
        if (isalpha(word[0]))
             if ((n = binsearch(word, keytab, NKEYS)) >= 0)
                 keytab[n].count++;
+    }
     for (n = 0; n < NKEYS; n++)
         if (keytab[n].count > 0)
             printf("%4d %s\n",
@@ -89,6 +91,7 @@ int mygetword(char *word, int lim)
 
     while (isspace(c=getch()))
         ;
+    printf("char %c\n", );
     if (c != EOF)
         *w++ = c;
     if (!isalpha(c)) {
@@ -121,14 +124,9 @@ int mygetword(char *word, int lim)
     
     for ( ; --lim > 0; w++)
         if (!isalnum(*w = getch())) {
-            if (!isspace(*w)){
-                ungetch(*w);
-                return (*w);
-            }
-            else {
                 ungetch(*w);
                 break;
-            }
+            
         }
     *w = '\0';
     return word[0];
