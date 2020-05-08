@@ -32,7 +32,7 @@ struct tnode
 struct numwordnode
 {
     int number;
-    struct words *wordslist;
+    char  *wordslist;
     struct numwordnode *left;
     struct numwordnode *right;
 };
@@ -46,7 +46,7 @@ struct words
 struct tnode *addtree(struct tnode *, char *);
 struct numwordnode *addnumtree(struct numwordnode *, int, char*);
 struct words *addwordtolist(struct words*, char *);
-void printwords(const struct words*, const int);
+void printwords(const char *, const int);
 
 struct numwordnode *traverse(const struct tnode *, struct numwordnode *);
 void treeprint(const struct numwordnode *);
@@ -222,8 +222,7 @@ struct numwordnode *addnumtree(struct numwordnode *p, int count, char* w)
     if (p == NULL) {
         p = numwordalloc();
         p->number = count;
-        p->wordslist = NULL;
-        p->wordslist = addwordtolist(p->wordslist, w);
+        p->wordslist = w;
     }
     else if (count < p->number)
         p->left = addnumtree(p->left, count, w);
@@ -254,11 +253,11 @@ void treeprint(const struct numwordnode *p)
     }
 }
 
-void printwords(const struct words* w, const int count)
+void printwords(const char * w, const int count)
 {
     if (w != NULL) {
-        printf("%s->%d\n", w->word, count);
-        w = w->nextword;
+        printf("%s->%d\n", w, count);
+
     }
 }
 
