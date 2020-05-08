@@ -125,7 +125,7 @@ int getword(char *word, int lim)
 
 int main()
 {
-    printf("please input some characters：\n");
+    printf("please input some characters:\n");
 
     struct tnode *root;
     char word[MAXWORD];
