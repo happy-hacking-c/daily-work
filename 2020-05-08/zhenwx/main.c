@@ -107,7 +107,7 @@ struct numwordnode *addnumtree(struct numwordnode *p, int count, char *w) {
         p->number = count;
         p->wordslist = NULL;
         p->wordslist = addwordtolist(p->wordslist, w);
-    } else if (count < p->number)
+    } else if (count > p->number)
         p->left = addnumtree(p->left, count, w);
     else
         p->right = addnumtree(p->right, count, w);
