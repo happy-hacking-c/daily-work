@@ -5,7 +5,7 @@ void swap(int *a, int *b);
 
 int main(){
     int arr[16] = {3,4,5,6,7,21,34,352,1,2,3,444,5,2,555,2};
-    InsertSort(arr,1,16);
+    InsertSort(arr,0,16);
     for (size_t i = 0; i < 16; i++)
     {
         printf("%d \n",arr[i]);
