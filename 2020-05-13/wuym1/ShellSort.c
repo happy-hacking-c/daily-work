@@ -5,19 +5,16 @@ int main() {
 
     for (int gap = 10 / 2; gap > 0; gap /= 2) {
         for (int i = gap; i < 10; i++) {
-            int j = i;
-            int temp = a[j];
-            if (a[j] < a[j - gap]) {
-                while (j - gap >= 0 && temp < a[j - gap]) {
-                    a[j] = a[j - gap];
-                    j -= gap;
-                }
-                a[j] = temp;
+            int j = i, temp = a[i];
+            while (j - gap >= 0 && temp < a[j - gap]) {
+                a[j] = a[j - gap];
+                j -= gap;
             }
+            a[j] = temp;
         }
     }
 
-    printf("希尔排序:");
+    printf("Result:");
     for (size_t i = 0; i < 10; i++) {
         printf("%2d", a[i]);
     }
