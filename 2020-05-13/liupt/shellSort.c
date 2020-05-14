@@ -1,7 +1,7 @@
 #include <stdio.h>
 void InsertSort(int arr[], int start, int end);
 void binary_insert_sort(int arr[], int len);
-void shellsort(int A[], int l, int h);
+
 void swap(int *a, int *b);
 
 int main(){
