@@ -3,15 +3,15 @@
 //
 #include <stdio.h>
 #include <ctype.h>
-#define MAXLINE  5
+#define MAXLINE  10
 int incPos(int pos, int inc);
 int main() {
     int c;
     int pos = 0;
     while( (c = getchar()) != EOF) {
         if (iscntrl(c) || c == ' ') {
-            pos = incPos(pos, 3);
-            printf("\\%02x", c);
+            pos = incPos(pos, 4);
+            printf("\\x%02x", c);
             if (c == '\n') {
                 putchar('\n');
                 pos = 0;
