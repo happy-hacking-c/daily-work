@@ -54,6 +54,7 @@ int mgetword(char *, int);
 
 int main(int argc, char *argv[])
 {
+    toupper()
     struct tnode *root;
     struct numwordnode *numwordroot;
 

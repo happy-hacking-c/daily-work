@@ -6,7 +6,7 @@ int main(int argc, char const *argv[])
 {
 	int c;
 	/* code */
-	if (strcmp(argv[0],"./tolower")== 0)
+	if (strcmp(argv[0],"tolower")== 0)
 	{
 		while ((c = getchar()) != EOF)
 			putchar(tolower(c));
