@@ -5,6 +5,7 @@ void quickSort(int a[], int start, int end);
 
 int main() {
     int a[10] = {2, 4, 1, 3, 6, 7, 5, 0, 8, 9};
+    
     quickSort(a, 0, 9);
 
     printf("quick sort:");
