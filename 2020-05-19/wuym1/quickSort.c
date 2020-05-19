@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void swap(int a[], int i, int j);
 void quickSort(int a[], int start, int end);
 
