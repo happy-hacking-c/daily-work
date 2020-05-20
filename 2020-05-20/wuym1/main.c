@@ -21,12 +21,9 @@ int main() {
     int arr[10] = {2, 4, 1, 3, 6, 7, 9, 0, 8, 5};
     int length = (sizeof arr) / (sizeof arr[0]);
 
-    // Construir un triángulo
     for (int i = (length - 2) / 2; i >= 0; i--) {
         downAdjust(arr, i, length);
     }
-    // El ciclo elimina el elemento de la cúpula, se mueve a la cola del Grupo, 
-    // el reactor regulador genera una nueva cúpula.
     for (int i = length - 1; i > 0; i--) {
         int temp = arr[i];
         arr[i] = arr[0];
