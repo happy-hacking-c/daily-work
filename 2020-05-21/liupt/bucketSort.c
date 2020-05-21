@@ -46,7 +46,7 @@ void bucketSort(int data[], int size)
     pos = 0;
     for (i = 0; i < num; i++)
     {
-        quickSort((pBarrel + i)->node, 0, (pBarrel + i)->count);
+        quickSort((pBarrel + i)->node, 0, (pBarrel + i)->count-1);
         for (j = 0; j < (pBarrel + i)->count; j++)
         {
             data[pos++] = (pBarrel + i)->node[j];
