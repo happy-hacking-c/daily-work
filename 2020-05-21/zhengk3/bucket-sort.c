@@ -29,7 +29,6 @@ void bucketSort(double *p, int len)
             min = *(p+i);
         }
     }
-
     double d = max - min;
 
     //创建桶并初始化
@@ -52,9 +51,7 @@ void bucketSort(double *p, int len)
         bucketList[index][itemCounts[index]] = *(p+x);
         itemCounts[index] += 1;
         printf("keyIndex counts:%d\n",itemCounts[index]);
-             
     }
-
 
     //对每个内部桶进行排序
     for(int y = 0; y < bucketNum; y++) {
@@ -71,11 +68,7 @@ void bucketSort(double *p, int len)
                 pIndex++;
             }
         }
-
     }
-
-
-
 }
 
 
