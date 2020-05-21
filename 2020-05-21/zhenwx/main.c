@@ -1,8 +1,6 @@
-#include "stdio.h"
+#include <stdio.h>
 
-int main(int argc, char* argv[]) {
-    int arr[20] = {5, 6, 7, 8, 9, 0, 1, 2, 3, 4};
-    int length = (sizeof arr) / (sizeof arr[0]);
+void mySort(int arr[], int length) {
     int max = arr[0];
     for (int i = 1; i < length; i++) {
         if (arr[i] > max) {
@@ -27,10 +25,18 @@ int main(int argc, char* argv[]) {
             }
         }
     }
+}
 
-    for (int i = 0; i < length; i++) {
-        printf("%2d", arr[i]);
-    }
+int main() {
+    int a[10], i;
+    printf("输入10个数：\n");
+    for (i = 0; i < 10; i++) scanf("%d", &a[i]);
+
+    mySort(a, 10);
+
+    printf("排序结果：\n");
+    for (i = 0; i < 10; i++) printf("%5d", a[i]);
+    printf("\n");
 
     return 0;
 }
