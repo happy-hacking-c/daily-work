@@ -10,7 +10,6 @@ struct barrel
     int node[10];
     int count;
 };
-
 void bucketSort(int data[], int size)
 {
     int max, min, num, pos;
