@@ -1,23 +1,17 @@
 #include <stdio.h>
+#include <unistd.h>
 
-#define isupper(c) ((c) >= 'A' && (c) <= 'Z') ? 1 : 0
+#define BUFSIZE 100
 
 
 int main(int argc, char const *argv[])
 {
-	/* code */
-	if (argc>1)
+	char buf[BUFSIZE];
+	int n;
+	while((n = read(0,buf,BUFSIZE)) >0)
 	{
-		printf("%d\n", isupper(argv[1][0]));
-		/* code */
+		write(1,buf,n);
 	}
 	
 	return 0;
 }
-
-/*int isupper(char c){
-    if(c >= 'A' && c <= 'Z')
-        return 1;
-    else
-        return 0;
-}*/
