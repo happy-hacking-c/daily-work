@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 float ff(float x, float y) {
     float res;
+    
     if (x == y) {
         res = x;
     } else if (x < 1 || y < 1) {
